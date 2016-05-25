@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>Currency Converter </title>
+        <link rel="stylesheet" type="text/css" href="CC.css"/>
+    </head>
+
+
+
+        
+<body>
+    <h1> Currency Conversion </h1>
+	<br></br> 
+  <input type = "number" id= "amount"> </input>
+  <select id = "rate1" name="rate1">
+    <option value="0">USD</option>
+    <option value="1 ">Yen</option>
+    <option value="2">AUD</option>
+    <option value="3">Euro</option>
+    <option value="4">Won</option>
+    <option value="5">CAD</option>
+    
+  </select>
+	<p> to </p>
+        <p id ="amount2"> </p>
+  <select id = "rate2" name="rate2">
+    <option value="0">USD</option>
+    <option value="1 ">Yen</option>
+    <option value="2">AUD</option>
+    <option value="3">Euro</option>
+    <option value="4">Won</option>
+    <option value="5">CAD</option>
+
+  </select>
+  <br><br>
+<button onclick= "convertCurrency()">Submit</button>
+
+<script>
+
+
+
+	var exchangeRate = [ 1 ,109.23,1.38,.89,1182.41, 1.31];
+	function convertCurrency(){
+		//USD is always base
+        var amount, rate1, rate2, cAmount;
+	amount = Number(document.getElementById("amount").value);
+	rate1 = Number(document.getElementById("rate1").value);
+	rate2 = Number(document.getElementById("rate2").value);
+	cAmount = amount / exchangeRate[rate1];
+        cAmount = cAmount * exchangeRate[rate2];
+        document.getElementById("amount2").innerHTML = cAmount;
+	}
+        
+</script>
+
+<p><strong>Note:</strong> This Currency Converter is not supported in Edge/Internet Explorer.</p>
+</body>
+</html>
