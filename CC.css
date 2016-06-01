@@ -1,15 +1,47 @@
+
+
 h1 {
-    font-family: "Trebuchet MS";
+    font-family: 'Lato', sans-serif;;
     color: white;
     font-size: 2rem;
+    font-weight: 100;
+    text-align: center;
+    margin: 10px;
+    border: 1px;
+
 }
 
 body {
 	height: 100%;
 	margin: 0;
 	text-align: center;
+    border: 10px;
 	width: 100%;
+       
 }
+summary,p   {
+   
+    font-family: 'Lato', sans-serif;
+    color: black;
+    font-size: 1rem;
+    
+        
+}
+
+.page-description{
+    color: black;
+    text-align: center;
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+
+.note {
+
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates

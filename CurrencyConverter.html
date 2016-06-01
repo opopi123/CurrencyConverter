@@ -2,6 +2,7 @@
 <html>
     <head> 
         <title>Currency Converter </title>
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
         <link rel="stylesheet" type="text/css" href="CC.css"/>
     </head>
 
@@ -9,9 +10,14 @@
 
         
 <body background = "background.jpg">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+
     
     <h1> Currency Conversion </h1>
 	<br></br> 
+    <p class = "page-description">
+        To use the "Currency Converter" just type an amount, specify an intial currency and then specify the currency you wish to convert to.
+    </p>
   <input type = "number" id= "amount"> </input>
   <select id = "rate1" name="rate1">
     <option value="0">USD</option>
@@ -24,7 +30,7 @@
     <option value="7">Franc</option>
     <option value="8">Peso</option>
     
-
+    
     
   </select>
 	<p> to </p>
@@ -58,11 +64,23 @@
 	rate2 = Number(document.getElementById("rate2").value);
 	cAmount = amount / exchangeRate[rate1];
         cAmount = cAmount * exchangeRate[rate2];
+        cAmount = Math.round(cAmount * 100) / 100;
+        cAmount = numberWithCommas(cAmount);
+        
         document.getElementById("amount2").innerHTML = cAmount;
 	}
+        //function numberWithCommas credited to Elias Zamaria from StackOverFlow 
+        function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
         
 </script>
+<div class = "note">
+<details>
+    <summary><strong>Note:</strong> This Currency Converter is not supported in Edge/Internet Explorer. </summary>
+    <p>This currency converting application does not use live exchange rates. Quotes are approximations.<br> </br> Currency results are rounded to the hundredth.</p>
+</details>
 
-<p><strong>Note:</strong> This Currency Converter is not supported in Edge/Internet Explorer.</p>
+</div>
 </body>
 </html>
